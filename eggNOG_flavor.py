@@ -11,6 +11,8 @@
 #speciesFromEggnog must be eggnogv4.species.txt
 #for taxid the options are "Fungi", "Protists", "Metazoa","Plants"
 
+#adapt to no run the hole script
+
 
 from sys import argv
 
@@ -18,14 +20,16 @@ def select_species(infile, tax):
 	species=open(infile)
 	taxid="Ensembl "+tax
 	taxlist=set()
+	dicspecies={}
 	for i in species:
 		line=i.split("\t")
 		if line[3]==taxid:
-			taxlist.add(line[1])
+			dicspecies[line[1]]=line[0]
 	species.close()
-	return taxlist
+	return dicspecies
 
-def select_sequences(infile, idlist):
+def select_sequences(infile):
+	species=select_species(argv[2], argv[3])
 	fasta=open(infile)
 	seqs={}
 	temp=0
@@ -34,7 +38,7 @@ def select_sequences(infile, idlist):
 			temp=0
 			idsd=i.split(".")
 			idd=idsd[0]
-			if idd[1:] in idlist:
+			if idd[1:] in species:
 				seqs[i]=""
 				temp+=1
 				name=i
@@ -50,5 +54,6 @@ def write_file(dic, output):
 		out.write(value+"\n")
 	out.close()
 
-write_file(select_sequences(argv[1], select_species(argv[2], argv[3])),argv[4])
+if __name__ == "__main__":
+	write_file(select_sequences(argv[1]),argv[4])
 
