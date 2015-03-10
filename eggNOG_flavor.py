@@ -23,7 +23,6 @@ def select_species(infile, tax):
 		if line[3]==taxid:
 			taxlist.add(line[1])
 	species.close()
-	print(taxlist)
 	return taxlist
 
 def select_sequences(infile, idlist):
@@ -31,19 +30,16 @@ def select_sequences(infile, idlist):
 	seqs={}
 	temp=0
 	for i in fasta:
-		print(i)
 		if i.startswith(">"):
 			temp=0
 			idsd=i.split(".")
 			idd=idsd[0]
-			print(idd[1:])
 			if idd[1:] in idlist:
 				seqs[i]=""
 				temp+=1
 				name=i
 		elif temp>=1:
 			seqs[name]+=i.strip("\n")
-	print(seqs)
 	fasta.close()
 	return seqs
 
