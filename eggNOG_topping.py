@@ -11,6 +11,7 @@
 #The tab-dellimited output file is organized as
 #Gene  NOG_name  Category   Subcategory   Specie
 
+#To do: add argparse
 
 from sys import argv
 from eggNOG_flavor import select_species

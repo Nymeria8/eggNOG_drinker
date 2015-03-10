@@ -13,6 +13,7 @@
 
 #adapt to no run the hole script
 
+#To do: documentation and readme
 
 from sys import argv
 
