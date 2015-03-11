@@ -11,10 +11,6 @@
 #speciesFromEggnog must be eggnogv4.species.txt
 #for taxid the options are "Fungi", "Protists", "Metazoa","Plants"
 
-#adapt to no run the hole script
-
-#To do: documentation and readme
-
 from sys import argv
 
 def select_species(infile, tax):

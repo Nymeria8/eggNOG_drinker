@@ -58,12 +58,14 @@ def hits_cutoff(hits,members):
 	"""Returns a dictionary with the nog names and their respective
 	sequences"""
 	cutoff_hits={}
+	nogs=set()
 	for key,value in hits.items():
 		for el in value:
 			if el in members:
-				cutoff_hits[members[el]]=key
+				cutoff_hits[key]=members[el]
+				nogs.add(members[el])
 				break
-	return cutoff_hits
+	return cutoff_hits, nogs
 
 #arg1-hits rapsearch
 #arg2-speciesfile
@@ -71,7 +73,7 @@ def hits_cutoff(hits,members):
 #arg4 - membersfile
 dic_specie=select_species(argv[2], argv[3])#species tax id
 correspondance, nog_specie=members_names(argv[4])
-hits=hits_cutoff(rapsearch_result(argv[1]), correspondance)
+hits, nogs=hits_cutoff(rapsearch_result(argv[1]), correspondance)
 
 ##################GET INFORMATION#######################################
 
@@ -95,7 +97,7 @@ def define_categories(infile):
 	cat_genes={}
 	for i in f:
 		el=i.split("\t")
-		if el[0] in hits:
+		if el[0] in nogs:
 			cat_genes[el[0]]=""
 			for leter in el[1]:
 				if leter in foam:
@@ -111,8 +113,8 @@ def get_description(infile):
 	dic_des={}
 	for i in f:
 		el=i.split("\t")
-		if el[0] in hits:
-			dic_des[el[0]]=el[1]
+		if el[0] in nogs:
+			dic_des[el[0]]=el[1].strip("\n")
 	f.close()
 	return dic_des
 
@@ -125,7 +127,7 @@ def write_file(output):
 	out=open(output,"w")
 	out.write("Gene\tNOG name\tCategory\tSubcategory\tSpecie\n")
 	for key, value in hits.items():
-		out.write(value+"\t"+key+"\t"+cats[key]+"\t"+subcat[key]+"\t"+nog_specie[key]+"\n")
+		out.write(key+"\t"+value+"\t"+cats[value]+"\t"+subcat[value]+"\t"+nog_specie[value]+"\n")
 	out.close()
 
 write_file(argv[7])
