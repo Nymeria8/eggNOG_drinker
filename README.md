@@ -5,7 +5,7 @@ Gene ontology seach and assignment using [eggNOG database](ftp://eggnog.embl.de/
 
 ##The program is composed by two parts:
 
-1. **eggNOG_flavor.py** : To make the database smaller and faster during the rapsearch use.
+**eggNOG_flavor.py** : To make the database smaller and faster during the rapsearch use.
 Ordinarily this kind of search is done against similiar species to the one in study. In this way,
 this script makes a custom database for each search. **Restrictied to the ensembl entries of the database**
  
@@ -14,13 +14,13 @@ this script makes a custom database for each search. **Restrictied to the ensemb
 <pre><code>python eggNOG_flavor.py [fastaFromEggnog] [speciesFromEggnog] [taxid] [outputFileName]
 </code></pre>
 
-* fastaFromEggnog: protein sequences of the database. Should be eggnogv*.proteins.all.fa.gz
-* speciesFromEggnog: list of species from the eggNOG database. Should be eggnogv*.species.txt
-* taxid: the options are "Fungi", "Protists", "Metazoa","Plants"
+* <span style="text-decoration:underline">astaFromEggnog </span>: protein sequences of the database. Should be eggnogv*.proteins.all.fa.gz
+* <span style="text-decoration:underline">speciesFromEggnog </span>: list of species from the eggNOG database. Should be eggnogv*.species.txt
+* <span style="text-decoration:underline">taxid </span>: the options are "Fungi", "Protists", "Metazoa","Plants"
 
 
 
-2. **eggNOG_topping.py** : Parse your results from the homology search using the database files from eggnog
+**eggNOG_topping.py** : Parse your results from the homology search using the database files from eggnog
 and the Rapsearch result file m8  **Must be placed in the same directory as eggNOG_flavour.py**
 
 **In the command line:**
@@ -28,12 +28,12 @@ and the Rapsearch result file m8  **Must be placed in the same directory as eggN
 <pre><code>python eggNOG_topping.py [rapsearch.m8] [eggnog.species] [tax id] [nog.members] [NOG.funccat] [NOG.description] [output file]
 </code></pre>
 
-* rapsearch.m8: rapsearch output file .m8
-* eggnog.species: file from the eggNOG database. Should be: eggnogv*.species.txt
-* tax id:the options are "Fungi", "Protists", "Metazoa","Plants"
-* nog.members: file from the eggNOG database. Should be *.members.txt, where * depends on the organism your studing
-* NOG.funccat: file from the eggNOG database. Should be *.funccat.txt, where * depends on the organism your studing
-* NOG.description: file from the eggNOG database. Should be *.description.txt, where * depends on the organism your studing
+* <span style="text-decoration:underline">rapsearch.m8 </span>: rapsearch output file .m8
+* <span style="text-decoration:underline">eggnog.species </span>: file from the eggNOG database. Should be: eggnogv*.species.txt
+* <span style="text-decoration:underline">tax id </span>:the options are "Fungi", "Protists", "Metazoa","Plants"
+* <span style="text-decoration:underline">nog.members </span>: file from the eggNOG database. Should be *.members.txt, where * depends on the organism your studing
+* <span style="text-decoration:underline">NOG.funccat </span>: file from the eggNOG database. Should be *.funccat.txt, where * depends on the organism your studing
+* <span style="text-decoration:underline">NOG.description </span>: file from the eggNOG database. Should be *.description.txt, where * depends on the organism your studing
 
 ##Dependencies:
 * Python(2 or 3)
