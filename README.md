@@ -14,9 +14,9 @@ this script makes a custom database for each search. **Restrictied to the ensemb
 <pre><code>python eggNOG_flavor.py [fastaFromEggnog] [speciesFromEggnog] [taxid] [outputFileName]
 </code></pre>
 
-* <span style="text-decoration:underline">astaFromEggnog </span>: protein sequences of the database. Should be eggnogv*.proteins.all.fa.gz
-* <span style="text-decoration:underline">speciesFromEggnog </span>: list of species from the eggNOG database. Should be eggnogv*.species.txt
-* <span style="text-decoration:underline">taxid </span>: the options are "Fungi", "Protists", "Metazoa","Plants"
+* <u>astaFromEggnog</u>: protein sequences of the database. Should be eggnogv*.proteins.all.fa.gz
+* <u>speciesFromEggnog</u>: list of species from the eggNOG database. Should be eggnogv*.species.txt
+* <u>taxid</u>: the options are "Fungi", "Protists", "Metazoa","Plants"
 
 
 
@@ -28,12 +28,12 @@ and the Rapsearch result file m8  **Must be placed in the same directory as eggN
 <pre><code>python eggNOG_topping.py [rapsearch.m8] [eggnog.species] [tax id] [nog.members] [NOG.funccat] [NOG.description] [output file]
 </code></pre>
 
-* <span style="text-decoration:underline">rapsearch.m8 </span>: rapsearch output file .m8
-* <span style="text-decoration:underline">eggnog.species </span>: file from the eggNOG database. Should be: eggnogv*.species.txt
-* <span style="text-decoration:underline">tax id </span>:the options are "Fungi", "Protists", "Metazoa","Plants"
-* <span style="text-decoration:underline">nog.members </span>: file from the eggNOG database. Should be *.members.txt, where * depends on the organism your studing
-* <span style="text-decoration:underline">NOG.funccat </span>: file from the eggNOG database. Should be *.funccat.txt, where * depends on the organism your studing
-* <span style="text-decoration:underline">NOG.description </span>: file from the eggNOG database. Should be *.description.txt, where * depends on the organism your studing
+* <u>rapsearch.m8</u>: rapsearch output file .m8
+* <u>eggnog.species</u>: file from the eggNOG database. Should be: eggnogv*.species.txt
+* <u>tax id</u>:the options are "Fungi", "Protists", "Metazoa","Plants"
+* <u>nog.members</u>: file from the eggNOG database. Should be *.members.txt, where * depends on the organism your studing
+* <u>NOG.funccat</u>: file from the eggNOG database. Should be *.funccat.txt, where * depends on the organism your studing
+* <u>NOG.description</u>: file from the eggNOG database. Should be *.description.txt, where * depends on the organism your studing
 
 ##Dependencies:
 * Python(2 or 3)
