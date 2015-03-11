@@ -14,9 +14,9 @@ this script makes a custom database for each search. **Restrictied to the ensemb
 <pre><code>python eggNOG_flavor.py [fastaFromEggnog] [speciesFromEggnog] [taxid] [outputFileName]
 </code></pre>
 
-* <u>astaFromEggnog</u>: protein sequences of the database. Should be eggnogv*.proteins.all.fa.gz
-* <u>speciesFromEggnog</u>: list of species from the eggNOG database. Should be eggnogv*.species.txt
-* <u>taxid</u>: the options are "Fungi", "Protists", "Metazoa","Plants"
+* fastaFromEggnog: protein sequences of the database. Should be eggnogv*.proteins.all.fa.gz
+* speciesFromEggnog: list of species from the eggNOG database. Should be eggnogv*.species.txt
+* taxid: the options are "Fungi", "Protists", "Metazoa","Plants"
 
 
 
@@ -28,12 +28,12 @@ and the Rapsearch result file m8  **Must be placed in the same directory as eggN
 <pre><code>python eggNOG_topping.py [rapsearch.m8] [eggnog.species] [tax id] [nog.members] [NOG.funccat] [NOG.description] [output file]
 </code></pre>
 
-* <u>rapsearch.m8</u>: rapsearch output file .m8
-* <u>eggnog.species</u>: file from the eggNOG database. Should be: eggnogv*.species.txt
-* <u>tax id</u>:the options are "Fungi", "Protists", "Metazoa","Plants"
-* <u>nog.members</u>: file from the eggNOG database. Should be *.members.txt, where * depends on the organism your studing
-* <u>NOG.funccat</u>: file from the eggNOG database. Should be *.funccat.txt, where * depends on the organism your studing
-* <u>NOG.description</u>: file from the eggNOG database. Should be *.description.txt, where * depends on the organism your studing
+* rapsearch.m8: rapsearch output file .m8
+* eggnog.species: file from the eggNOG database. Should be: eggnogv*.species.txt
+* tax id:the options are "Fungi", "Protists", "Metazoa","Plants"
+* nog.members: file from the eggNOG database. Should be *.members.txt, where * depends on the organism your studing
+* NOG.funccat: file from the eggNOG database. Should be *.funccat.txt, where * depends on the organism your studing
+* NOG.description: file from the eggNOG database. Should be *.description.txt, where * depends on the organism your studing
 
 ##Dependencies:
 * Python(2 or 3)
